@@ -1,7 +1,7 @@
 <script lang="ts">
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
     import { Label, Input, Helper } from "flowbite-svelte";
-    import { supplierHeaders as headers } from "$lib/headers";
+    import { requestHeaders as headers } from "$lib/headers";
   
     let formData: Record<string, any> = {};
   
