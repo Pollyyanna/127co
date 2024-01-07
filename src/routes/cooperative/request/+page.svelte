@@ -11,7 +11,7 @@
   
     const handleEdit = async (id: number) => {
       await fetch(
-        "/cooperative/request/edit", {
+        "/cooperative/api/database/edit", {
           method: "POST",
           body: JSON.stringify({
             id,

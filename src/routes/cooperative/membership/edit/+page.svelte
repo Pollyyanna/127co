@@ -1,17 +1,18 @@
 <script lang="ts">
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
     import { Label, Input, Helper } from "flowbite-svelte";
-    import { requestHeaders as headers } from "$lib/headers";
+    import { membershipHeaders as headers } from "$lib/headers";
   
     let formData: Record<string, any> = {};
   
     const handleSubmit = async () => {
+      const requestData = {
+        data: JSON.stringify(formData),
+        table: "Membership",
+      };
       await fetch("/cooperative/api/database/create", {
         method: "POST",
-        body: JSON.stringify({
-          data: JSON.stringify(formData),
-          table: "Request",
-        }),
+        body: JSON.stringify(requestData),
       });
     };
   </script>
@@ -20,8 +21,8 @@
     <Breadcrumb
       items={[
         { href: "/cooperative", text: "Cooperative" },
-        { href: "/cooperative/request/", text: "Request" },
-        { href: "/cooperative/request/add", text: "Add an Entry" },
+        { href: "/cooperative/membership", text: "Membership" },
+        { href: "/cooperative/membership/edit", text: "Edit an Entry" },
       ]}
     />
     {#each headers as header (header)}
@@ -49,7 +50,7 @@
       on:click={handleSubmit}
       class="mt-4 bg-accent hover:bg-primary-600 text-white px-4 py-2 rounded"
     >
-      Add an Entry
+      Edit an Entry
     </button>
   </main>
   

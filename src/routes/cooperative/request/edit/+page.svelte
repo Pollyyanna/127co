@@ -35,14 +35,14 @@
           class="w-full p-2 border border-gray-300 rounded"
         />
       </div>
+      <Helper class="mt-2 hidden" color="red" id="error-char">
+        <span class="font-medium">Please enter characters only (A-Z, a-z)</span>
+      </Helper>
       <Helper class="mt-2 hidden" color="red" id="error-num">
         <span class="font-medium">Please enter numbers only (0-9)</span>
       </Helper>
-      <Helper class="mt-2 hidden" color="red" id="error-char">
-        <span class="font-medium">Please enter characters only (A-Z, a-z)</span>
-      </Helper>
-      <Helper class="mt-2 hidden" color="red" id="error-char">
-        <span class="font-medium">Please enter characters only (A-Z, a-z)</span>
+      <Helper class="mt-2 hidden" color="red" id="error-date">
+        <span class="font-medium">Please enter in date format only (2023-02-01 09:00:00)</span>
       </Helper>
     {/each}
   

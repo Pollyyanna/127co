@@ -1,7 +1,7 @@
 <script lang="ts">
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
     import { Label, Input, Helper } from "flowbite-svelte";
-    import { requestHeaders as headers } from "$lib/headers";
+    import { membershipHeaders as headers } from "$lib/headers";
   
     let formData: Record<string, any> = {};
   
@@ -10,7 +10,7 @@
         method: "POST",
         body: JSON.stringify({
           data: JSON.stringify(formData),
-          table: "Request",
+          table: "Membership",
         }),
       });
     };
@@ -20,8 +20,8 @@
     <Breadcrumb
       items={[
         { href: "/cooperative", text: "Cooperative" },
-        { href: "/cooperative/request/", text: "Request" },
-        { href: "/cooperative/request/add", text: "Add an Entry" },
+        { href: "/cooperative/membership/", text: "Membership" },
+        { href: "/cooperative/membership/add", text: "Add an Entry" },
       ]}
     />
     {#each headers as header (header)}
