@@ -9,7 +9,16 @@
   
     let rows = data["request"];
   
-    const handleEdit = async (id: number) => {};
+    const handleEdit = async (id: number) => {
+      await fetch(
+        "/cooperative/request/edit", {
+          method: "POST",
+          body: JSON.stringify({
+            id,
+            table: "Request"
+          })
+        });
+    };
   
     const handleDelete = async (id: number) => {
       await fetch(
