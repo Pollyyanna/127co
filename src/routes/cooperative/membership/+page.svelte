@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Search, Button } from "flowbite-svelte";
     import Table from "$lib/components/Table.svelte";
     import Breadcrumb from "$lib/components/Breadcrumb.svelte";
   
@@ -39,6 +40,17 @@
         { href: "/cooperative/membership", text: "Membership" },
       ]}
     />
+
+    <Search class="mb-8">
+      <Button class="bg-activeb">Search</Button>
+    </Search>
+  
+    <div class="ml-9 mb-20">
+      <span class="text-xl mb-40 text-center font-bold"
+        >No exact match found.</span
+      >
+    </div>
+    
     <a
       href="/cooperative/membership/add"
       class="bg-buttonp rounded-lg z-4 border-2 w-40 border-outline p-3 mb-4 flex items-center hover:bg-buttonphover active:bg-buttonpactive"
